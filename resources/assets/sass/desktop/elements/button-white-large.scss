@@ -1,0 +1,8 @@
+.button-white-large {
+  @extend .button-green-large;
+
+  background: transparent;
+  color: $text-grey;
+  font-family: 'helveticaneuecyrmedium';
+  border: 1px solid $text-grey-light;
+}

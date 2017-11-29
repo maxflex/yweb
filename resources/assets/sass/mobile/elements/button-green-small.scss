@@ -1,0 +1,5 @@
+.button-green-small {
+  @extend .button-green-large;
+  height: auto;
+  font-family: 'helveticaneuecyrmedium';
+}

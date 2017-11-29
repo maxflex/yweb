@@ -1,0 +1,11 @@
+/node_modules
+/public/storage
+/vendor
+/.idea
+/storage
+/resources/assets/bower
+/public/.htaccess
+Homestead.json
+Homestead.yaml
+.env
+Envoy.blade.php

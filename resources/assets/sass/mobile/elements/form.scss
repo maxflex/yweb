@@ -1,0 +1,91 @@
+.input-text,
+.textarea,
+.select {
+  border: 1px solid $text-grey-light;
+  border-radius: $border-radius-element-form + em;
+  font-family: $font-regular;
+  font-size: 1em;
+  height: $height-element-form + em;
+  box-sizing: border-box;
+  padding: 0 0 0 0.625em;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.textarea {
+  line-height: normal;
+  padding-top: 0.625em;
+  overflow: auto;
+  height: 6.250em;
+}
+
+.form-row {
+  padding: 0 0 1.4em 0;
+  position: relative;
+}
+
+.select {
+    background: white;
+  &__arrow {
+    position: relative;
+    cursor: pointer;
+    padding-right: 2em;
+
+    &:before {
+        content: '';
+      position: absolute;
+      right: .5em;
+        top: .9em;
+        width: 1.2em;
+        height: 1.2em;
+      background: transparent url(../img/svg/dropdown-gray.svg) no-repeat;
+      background-size: 1.2em;
+      box-sizing: border-box;
+    }
+  }
+  & .selected-items {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.multiselect {
+  &-popup {
+    padding: 0 0 20px 0;
+  }
+
+  &-list {
+    margin: 0;
+    padding: 0 0 3em 0;
+    list-style: none;
+    cursor: pointer;
+
+    &-item {
+      position: relative;
+      text-align: left;
+      padding: 0.8em 4em 0.8em 1.2em;
+      border-bottom: 0.063em solid $color-grey-border;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 1.1em;
+        width: 1.750em;
+        height: 1.375em;
+        margin-top: -1.375/2 + em;
+        background: url('../img/icons/bullet.png') no-repeat;
+        background-size: contain;
+        opacity: 0.2;
+      }
+
+      &__active {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.reviews {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: $line-height-main + px;
+
+  &-item {
+    padding: 0 0 25px 0;
+    &-signature {
+    //   padding: 20px 0 0 0;
+        padding: 0;
+        font-size: 12px;
+        color: $text-grey;
+    }
+  }
+}
+
+.review-rating {
+    font-family: 'helveticaneuecyrmedium';
+}

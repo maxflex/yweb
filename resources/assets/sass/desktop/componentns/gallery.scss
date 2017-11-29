@@ -1,0 +1,29 @@
+$photogallery-item-indent: 10px;
+$photogallery-items-in-row: 6;
+
+.photogallery {
+  ul {
+    margin: 0;
+    padding: 0 0 20px 0;
+    list-style: none;
+
+    li {
+      width: calc((100% - (#{$photogallery-items-in-row - 1} * #{$photogallery-item-indent})) / #{$photogallery-items-in-row});
+      margin-left: #{$photogallery-item-indent};
+      margin-bottom: 5px;
+      box-sizing: border-box;
+      display: inline-block;
+      &:nth-child(#{$photogallery-items-in-row}n+1) {
+        margin-left: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  button {
+    outline: none;
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../bower/font-awesome/css/font-awesome.min";
+@import "../../bower/animate.css/animate.min";
+
+/* Common */
+@import "variable";
+@import "reload";
+@import "../fonts";
+@import "../shared";
+@import "../ng-image-gallery";
+@import "common";
+
+/* Components */
+@import "componentns/header";
+@import "componentns/footer";
+@import "componentns/tutors";
+@import "componentns/popup";
+@import "componentns/license";
+@import "componentns/main-menu";
+@import "componentns/top-message";
+@import "componentns/address";
+@import "componentns/price";
+@import "componentns/questions";
+@import "componentns/reviews";
+@import "componentns/landing";
+@import "componentns/catalog";
+@import "componentns/cv";
+@import "componentns/gallery";
+@import "componentns/courses";
+
+/* Elements */
+@import "elements/button-green-large";
+@import "elements/button-green-small";
+@import "elements/button-blue-large";
+@import "elements/button-white-large";
+@import "elements/form";
+@import "elements/badge";
+@import "elements/button-phone";

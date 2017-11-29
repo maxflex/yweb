@@ -1,0 +1,14 @@
+.main-menu {
+  // text-align: center;
+  // padding: 3.125em 0;
+  padding: 1.6em 1.2em;
+  &-list {
+    margin: 0;
+    padding: 0 0 1.250em 0;
+    list-style: none;
+
+    &-item {
+      padding: 0 0 1em 0;
+    }
+  }
+}

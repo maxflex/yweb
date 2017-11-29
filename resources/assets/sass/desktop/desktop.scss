@@ -1,0 +1,42 @@
+@import "../../bower/bootstrap-select/dist/css/bootstrap-select";
+@import "../../bower/bootstrap/css/bootstrap";
+@import "../../bower/font-awesome/css/font-awesome.min";
+
+/* Common */
+@import "variable";
+@import "reload";
+@import "../fonts";
+@import "../shared";
+@import "common";
+
+
+/* Components */
+@import "componentns/top-message";
+@import "componentns/licence";
+@import "componentns/header";
+@import "componentns/footer";
+@import "componentns/address";
+@import "componentns/questions";
+@import "componentns/reviews";
+@import "componentns/price";
+@import "componentns/enrollment";
+@import "componentns/tutors";
+@import "componentns/yachts";
+@import "componentns/right-img";
+@import "componentns/tutors-small";
+@import "componentns/landing";
+@import "componentns/courses";
+@import "componentns/popup";
+@import "componentns/top-filter";
+@import "componentns/gallery";
+
+/* Elements */
+@import "elements/button-green-large";
+@import "elements/button-green-small";
+@import "elements/button-blue-large";
+@import "elements/button-white-large";
+@import "elements/button-outline";
+@import "elements/form";
+
+@import "main";
+@import "../ng-image-gallery";

@@ -1,0 +1,120 @@
+$address-item-indent: .8;
+$height-right-arrow: 1.188;
+
+
+.address {
+  &-list {
+    margin: 0 (-$common-side-indent + em) 0 (-$common-side-indent + em);
+    padding: 0 0 2.500em 0 ;
+    list-style: none;
+    border-top: 0.063em solid $color-grey-border;
+
+    &-item {
+      padding: $address-item-indent + em ($common-side-indent + em) $address-item-indent + em ($common-side-indent*2 + em);
+      position: relative;
+      border-bottom: 0.063em solid $color-grey-border;
+      & > a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          text-decoration: none;
+          & > img {
+              height: $arrow-thick-size;
+              width: $arrow-thick-size;
+          }
+          & .address-branch-title {
+              text-decoration: underline;
+          }
+      }
+      &-info {
+        float: right;
+        color: $text-grey;
+        text-align: right;
+        line-height: 1.550em;
+        width: 10.938 + $common-side-indent + em;
+        box-sizing: border-box;
+        padding-right: $common-side-indent + em;
+        position: relative;
+      }
+
+      &-more {
+        color: $text-grey;
+        padding-top: 0.438em;
+      }
+    }
+
+    &-metro {
+      &:before {
+        content: '';
+        width: 0.500em;
+        height: 0.500em;
+        border-radius: 100%;
+        position: absolute;
+        top: ($address-item-indent + 0.35) + em;
+        left: $common-side-indent + em;
+      }
+
+      &__orange {
+        &:before {
+          background: #de823a;
+        }
+      }
+      &__red {
+        &:before {
+          background: #9e2a47;
+        }
+      }
+      &__green {
+        &:before {
+          background: #35a45b;
+        }
+      }
+      &__grey {
+        &:before {
+          background: #c4c4c4;
+        }
+      }
+      &__greenlight {
+        &:before {
+          background: #c0dc92;
+        }
+      }
+      &__blue {
+        &:before {
+          background: #56bdef;
+        }
+      }
+      &__violet {
+        &:before {
+          background: #293694;
+        }
+      }
+    }
+  }
+
+  &-more {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      padding: 0 0 0 0;
+      margin: 0 0 1.500em 0;
+      position: relative;
+      &:last-of-type {
+          margin: 0;
+      }
+      &-left {
+        font-family: $font-medium;
+      }
+    }
+  }
+
+  &-messages {
+    color: $text-red;
+  }
+
+  &-map {
+
+  }
+}

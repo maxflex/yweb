@@ -1,0 +1,36 @@
+/* color */
+$main-color: #2b5e6f;
+$main-link-color: #3a6699;
+$text-grey: #818181;
+$text-grey-light: #acacac;
+$text-red: #a30000;
+$color-green: #35a45b;
+$color-gold: #c8ca00;
+
+$table-gray: #767676;
+
+$menu-blue: #2b5e6f;
+
+$placeholder-gray: #757575;
+
+/* font size */
+$main-font-size: 14px;
+$font-size-h1: 24;
+$font-size-h2: 20;
+$font-size-h3: 16;
+
+/* size */
+$border-radius-element-form: 2;
+$height-element-form: 35;
+$footer-height: 336px;
+$border-radius-main: 2;
+$border-radius: 2px;
+
+$line-height-main: 21;
+
+$form-input-width: 320px;
+
+$screen-width: 960px;   // свойства responsive теряются при $screen-width + ($screen-padding * 2)
+$screen-padding: 20px;  // отступ слева и справа по $screen-padding при максимальном сжатии по ширине
+
+$img-path: '../img/';

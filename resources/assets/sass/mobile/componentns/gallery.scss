@@ -1,0 +1,28 @@
+$mobile-photogallery-item-indent: 3px;
+$mobile-photogallery-items-in-row: 3;
+
+.photogallery {
+  ul {
+    margin: 0;
+    padding: 0 0 20px 0;
+    list-style: none;
+
+    li {
+      width: calc((100% - (#{$mobile-photogallery-items-in-row - 1} * #{$mobile-photogallery-item-indent})) / #{$mobile-photogallery-items-in-row});
+      margin-left: #{$mobile-photogallery-item-indent};
+      box-sizing: border-box;
+      display: inline-block;
+      &:nth-child(#{$mobile-photogallery-items-in-row}n+1) {
+        margin-left: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  button {
+    outline: none;
+  }
+}

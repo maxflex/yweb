@@ -1,0 +1,49 @@
+.footer {
+  background: $color-footer;
+  color: #fff;
+  text-align: left;
+  font-family: 'helveticaneuecyrlight';
+  font-weight: normal;
+  width: 100%;
+  padding: $footer-margin 0 1.450em;
+  box-sizing: content-box;
+  margin-top: $footer-margin;
+  padding-left: 1.2em;
+  // margin-top: 0;
+  &-message {
+    padding: 0 0 0.625em 0;
+  }
+
+  &-title {
+    color: #b6b6b6;
+    font-size: 1.250em;
+    font-family: 'helveticaneuecyrmedium';
+    padding: 0 0 1.763em 0;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  &-menu {
+    margin: 0;
+    padding: 0 0 1.70em 0;
+    &:last-of-type {
+        padding: 0;
+    }
+    list-style: none;
+
+    li {
+      padding: 0 0 0.725em 0;
+    }
+  }
+
+  .button-green-large {
+    margin: 0 0 1.750em 0;
+  }
+}
+
+.footer.hidden {
+    display: block !important;
+    margin-top: 2em;
+}
