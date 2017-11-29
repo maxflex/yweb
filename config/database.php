@@ -90,19 +90,7 @@ return [
             'prefix'    => '',
             'unix_socket'   => env('DB_SOCKET', ''),
         ],
-
-        'factory' => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST_FACTORY'),
-            'database'  => env('DB_DATABASE_FACTORY'),
-            'username'  => env('DB_USERNAME_FACTORY'),
-            'password'  => env('DB_PASSWORD_FACTORY'),
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'unix_socket'   => env('DB_SOCKET', ''),
-        ],
-
+        
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),
