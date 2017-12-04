@@ -4868,7 +4868,8 @@ a[href^="https://www.google.com/maps"] {
       height: 75px;
       width: calc(25% - 10px);
       background-size: cover;
-      margin-right: 10px; }
+      margin-right: 10px;
+      cursor: pointer; }
       .yacht-photos-wrapper .yacht-photos > div.more-photos {
         margin-right: 0;
         display: -webkit-box;

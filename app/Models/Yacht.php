@@ -16,15 +16,18 @@ class Yacht extends Model
         'photos',
     ];
 
-    protected $appends = ['photo_urls'];
+    protected $appends = ['images'];
 
-    public function getPhotoUrlsAttribute()
+    public function getImagesAttribute()
     {
-        $urls = [];
-        foreach ($this->photos as $photo) {
-            $urls[] = config('app.crm-url') . self::UPLOAD_DIR . $photo;
+        $images = [];
+        foreach ($this->photos as $index => $photo) {
+            $images[] = [
+                'id'  => $index + 1,
+                'url' => config('app.crm-url') . self::UPLOAD_DIR . $photo
+            ];
         }
-        return $urls;
+        return $images;
     }
 
     /**
