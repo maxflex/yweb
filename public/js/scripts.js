@@ -16501,73 +16501,6 @@ var n=m.attr("style");g.push(n);m.attr("style",n?n+";"+d:d);});};j=function(){c.
 }).call(this);
 
 (function() {
-  var apiPath, countable, updatable;
-
-  angular.module('App').factory('Tutor', function($resource) {
-    return $resource(apiPath('tutors'), {
-      id: '@id',
-      type: '@type'
-    }, {
-      search: {
-        method: 'POST',
-        url: apiPath('tutors', 'search')
-      },
-      reviews: {
-        method: 'GET',
-        isArray: true,
-        url: apiPath('reviews')
-      }
-    });
-  }).factory('Yacht', function($resource) {
-    return $resource(apiPath('yachts'), {
-      id: '@id',
-      type: '@type'
-    }, {
-      search: {
-        method: 'POST',
-        url: apiPath('yachts', 'search')
-      }
-    });
-  }).factory('Request', function($resource) {
-    return $resource(apiPath('requests'), {
-      id: '@id'
-    }, updatable());
-  }).factory('Cv', function($resource) {
-    return $resource(apiPath('cv'), {
-      id: '@id'
-    }, updatable());
-  }).factory('Stream', function($resource) {
-    return $resource(apiPath('stream'), {
-      id: '@id'
-    });
-  });
-
-  apiPath = function(entity, additional) {
-    if (additional == null) {
-      additional = '';
-    }
-    return ("/api/" + entity + "/") + (additional ? additional + '/' : '') + ":id";
-  };
-
-  updatable = function() {
-    return {
-      update: {
-        method: 'PUT'
-      }
-    };
-  };
-
-  countable = function() {
-    return {
-      count: {
-        method: 'GET'
-      }
-    };
-  };
-
-}).call(this);
-
-(function() {
   angular.module('App').directive('academic', function() {
     return {
       restrict: 'E',
@@ -16919,6 +16852,73 @@ var n=m.attr("style");g.push(n);m.attr("style",n?n+";"+d:d);});};j=function(){c.
 
 }).call(this);
 
+(function() {
+  var apiPath, countable, updatable;
+
+  angular.module('App').factory('Tutor', function($resource) {
+    return $resource(apiPath('tutors'), {
+      id: '@id',
+      type: '@type'
+    }, {
+      search: {
+        method: 'POST',
+        url: apiPath('tutors', 'search')
+      },
+      reviews: {
+        method: 'GET',
+        isArray: true,
+        url: apiPath('reviews')
+      }
+    });
+  }).factory('Yacht', function($resource) {
+    return $resource(apiPath('yachts'), {
+      id: '@id',
+      type: '@type'
+    }, {
+      search: {
+        method: 'POST',
+        url: apiPath('yachts', 'search')
+      }
+    });
+  }).factory('Request', function($resource) {
+    return $resource(apiPath('requests'), {
+      id: '@id'
+    }, updatable());
+  }).factory('Cv', function($resource) {
+    return $resource(apiPath('cv'), {
+      id: '@id'
+    }, updatable());
+  }).factory('Stream', function($resource) {
+    return $resource(apiPath('stream'), {
+      id: '@id'
+    });
+  });
+
+  apiPath = function(entity, additional) {
+    if (additional == null) {
+      additional = '';
+    }
+    return ("/api/" + entity + "/") + (additional ? additional + '/' : '') + ":id";
+  };
+
+  updatable = function() {
+    return {
+      update: {
+        method: 'PUT'
+      }
+    };
+  };
+
+  countable = function() {
+    return {
+      count: {
+        method: 'GET'
+      }
+    };
+  };
+
+}).call(this);
+
 //# sourceMappingURL=app.js.map
 
 var scope = null
@@ -17105,219 +17105,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5P7NGRQ');
 <!-- End Google Tag Manager -->
-/*
-Constructor for the tooltip
-@ param options an object containing: marker(required), content(required) and cssClass(a css class, optional)
-@ see google.maps.OverlayView()
-*/
-
-function Tooltip(options) {
-
-    // Now initialize all properties.
-    this.marker_ = options.marker;
-    this.content_ = options.content;
-    this.map_ = options.marker.get('map');
-	this.cssClass_ = options.cssClass||null;
-
-    // We define a property to hold the content's
-    // div. We'll actually create this div
-    // upon receipt of the add() method so we'll
-    // leave it null for now.
-    this.div_ = null;
-
-    //Explicitly call setMap on this overlay
-    this.setMap(this.map_);
-	var me = this;
-	// Show tooltip on mouseover event.
-	google.maps.event.addListener(me.marker_, 'mouseover', function() {
-		me.show();
-	});
-	// Hide tooltip on mouseout event.
-	google.maps.event.addListener(me.marker_, 'mouseout', function() {
-		me.hide();
-	});
-}
-// Now we extend google.maps.OverlayView()
-Tooltip.prototype = new google.maps.OverlayView();
-
-// onAdd is one of the functions that we must implement,
-// it will be called when the map is ready for the overlay to be attached.
-Tooltip.prototype.onAdd = function() {
-
-    // Create the DIV and set some basic attributes.
-    var div = document.createElement('DIV');
-    div.style.position = "absolute";
-	// Hide tooltip
-	div.style.visibility = "hidden";
-	if(this.cssClass_)
-		div.className += " "+this.cssClass_;
-
-    //Attach content to the DIV.
-    div.innerHTML = this.content_;
-
-    // Set the overlay's div_ property to this DIV
-    this.div_ = div;
-
-    // We add an overlay to a map via one of the map's panes.
-    // We'll add this overlay to the floatPane pane.
-    var panes = this.getPanes();
-  	panes.floatPane.appendChild(this.div_);
-
-  }
-// We here implement draw
-Tooltip.prototype.draw = function() {
-
-    // Position the overlay. We use the position of the marker
-    // to peg it to the correct position, just northeast of the marker.
-    // We need to retrieve the projection from this overlay to do this.
-    var overlayProjection = this.getProjection();
-
-    // Retrieve the coordinates of the marker
-    // in latlngs and convert them to pixels coordinates.
-    // We'll use these coordinates to place the DIV.
-    var ne = overlayProjection.fromLatLngToDivPixel(this.marker_.getPosition());
-
-    // Position the DIV.
-    var div = this.div_;
-    div.style.left = ne.x + 'px';
-    div.style.top = ne.y + 'px';
-
-}
-// We here implement onRemove
-Tooltip.prototype.onRemove = function() {
-    this.div_.parentNode.removeChild(this.div_);
-}
-
-// Note that the visibility property must be a string enclosed in quotes
-Tooltip.prototype.hide = function() {
-    if (this.div_) {
-      this.div_.style.visibility = "hidden";
-    }
-}
-
-Tooltip.prototype.show = function() {
-    if (this.div_) {
-      this.div_.style.visibility = "visible";
-    }
-}
-
-// Generated by CoffeeScript 1.9.3
-var ICON_BLUE, ICON_GREEN, ICON_HOME, ICON_HOME_BLUE, ICON_RED, ICON_SCHOOL, ICON_SCHOOL_BLUE, ICON_SEARCH, INIT_COORDS, MAP_CENTER, RECOM_BOUNDS;
-
-ICON_WHITE = {
-  url: "/img/maps/whitepin.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_BLUE = {
-  url: "/img/maps/bluepin.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_RED = {
-  url: "/img/maps/redpin.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_GREEN = {
-  url: "/img/maps/greenpin.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_SCHOOL = {
-  url: "/img/maps/schoolpin.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_SCHOOL_BLUE = {
-  url: "/img/maps/schoolpin_blue.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_HOME = {
-  url: "/img/maps/homepin.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_HOME_BLUE = {
-  url: "/img/maps/homepin_blue.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-ICON_SEARCH = {
-  url: "/img/maps/bluepin.png",
-  scaledSize: new google.maps.Size(22, 40),
-  origin: new google.maps.Point(0, 0)
-};
-
-INIT_COORDS = {
-  lat: 55.7387,
-  lng: 37.6032
-};
-
-MAP_CENTER = new google.maps.LatLng(55.7387, 37.6032);
-
-RECOM_BOUNDS = new google.maps.LatLngBounds(new google.maps.LatLng(INIT_COORDS.lat - 0.5, INIT_COORDS.lng - 0.5, new google.maps.LatLng(INIT_COORDS.lat + 0.5, INIT_COORDS.lng + 0.5)));
-
-newMarker = function(latLng, map, type) {
-  if (type == null) {
-    type = 'green';
-  }
-  return new google.maps.Marker({
-    map: map,
-    position: latLng,
-    icon: getMarkerType(type),
-    type: type,
-    lat: latLng.lat(),
-    lng: latLng.lng(),
-  });
-};
-
-newTooltip = function(marker, branch) {
-    text = ['<span class="font-medium">' + branch.name + '</span>',
-          'Часы работы: ' + branch.time,
-          'Телефон: ' + branch.phone,
-          'Адрес: ' + branch.address].join('<br>')
-    tooltipOptions = {
-	  marker: marker,    // required
-	  content: text,    // required
-	  cssClass: 'speech-bubble' // name of a css class to apply to tooltip
-	};
-    return new Tooltip(tooltipOptions)
-}
-
-getMarkerType = function(type) {
-    switch (type) {
-        case 'green': {
-            return ICON_GREEN
-        }
-        case 'red': {
-            return ICON_RED
-        }
-        case 'blue': {
-            return ICON_BLUE
-        }
-        case 'white': {
-            return ICON_WHITE
-        }
-    }
-}
-
-addMarker = function(map, latLng) {
-  return new google.maps.Marker({
-    map: map,
-    position: latLng
-  });
-};
-
 (function(){
    'use strict';
 
