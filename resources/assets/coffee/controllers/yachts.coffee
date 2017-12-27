@@ -1,9 +1,10 @@
 angular
     .module 'App'
-    .controller 'Yachts', ($scope, $timeout, $http, Yacht) ->
+    .controller 'Yachts', ($scope, $timeout, $http, Yacht, Order) ->
         bindArguments($scope, arguments)
 
         $scope.popups = {}
+        $scope.sent_ids = if $.cookie('sent_ids') then JSON.parse($.cookie('sent_ids')) else []
 
         # сколько загрузок было
         search_count = 0
@@ -13,6 +14,27 @@ angular
             $scope.search = {}
             if not $scope.profilePage()
                 $scope.filter()
+
+        $scope.filterPopup = (popup) ->
+            $scope.popups[popup] = true
+
+        $scope.selectManufacturer = (manufacturer) ->
+            $scope.search.manufacturer = manufacturer
+            $scope.popups = {}
+            $scope.filter()
+
+        $scope.orderDialog = (yacht) ->
+            $scope.sending = false
+            $scope.order = {yacht_id: yacht.id}
+            openModal('order')
+
+        $scope.request = ->
+            $scope.sending = true
+            Order.save $scope.order, ->
+                closeModal()
+                $scope.sending = false
+                $scope.sent_ids.push($scope.order.yacht_id)
+                $.cookie('sent_ids', JSON.stringify($scope.sent_ids))
 
         # личная страница яхты?
         $scope.profilePage = ->

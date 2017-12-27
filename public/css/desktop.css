@@ -5504,6 +5504,23 @@ ol, ul {
   clear: both;
   padding-top: 18px; }
 
+.order-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%; }
+  .order-form .form-row-inner {
+    width: 100%; }
+  .order-form input {
+    width: 100%; }
+
+#modal-order {
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  width: 350px;
+  left: calc(50% - 175px);
+  height: 200px; }
+
 @-webkit-keyframes sk-stretchdelay {
   0%, 40%, 100% {
     -webkit-transform: scaleY(0.4); }

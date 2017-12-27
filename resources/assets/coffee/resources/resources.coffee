@@ -21,6 +21,9 @@ angular.module('App')
     .factory 'Cv', ($resource) ->
         $resource apiPath('cv'), {id: '@id'}, updatable()
 
+    .factory 'Order', ($resource) ->
+        $resource apiPath('order'), {id: '@id'}, updatable()
+
     .factory 'Stream', ($resource) ->
         $resource apiPath('stream'), {id: '@id'}
 

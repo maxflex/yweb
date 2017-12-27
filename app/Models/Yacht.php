@@ -39,9 +39,9 @@ class Yacht extends Model
 
         $query = Yacht::query();
 
-        // if (isset($subject_id) && $subject_id) {
-        //     $query->whereSubject($subject_id);
-        // }
+        if (isset($manufacturer) && $manufacturer) {
+            $query->where('manufacturer', $manufacturer);
+        }
         //
         // $query->selectDefault()->orderBy('clients_count', 'desc');
 

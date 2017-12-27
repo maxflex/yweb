@@ -6,6 +6,7 @@
     use App\Models\Review;
     use App\Models\Page;
     use App\Models\Tutor;
+    use App\Models\Yacht;
     use DB;
     use Cache;
 
@@ -119,6 +120,9 @@
                     // is|test
                     case 'is':
                         $replacement = isTestSubdomain() ? 'true' : 'false';
+                        break;
+                    case 'manufacturers':
+                        $replacement = Yacht::where('manufacturer', '<>', '')->groupBy('manufacturer')->pluck('manufacturer')->toJson();
                         break;
                     case 'tutors':
                         // поиск по ID
