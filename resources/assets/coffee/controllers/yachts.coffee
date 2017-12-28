@@ -4,6 +4,7 @@ angular
         bindArguments($scope, arguments)
 
         $scope.popups = {}
+        $scope.full_description = {}
         $scope.sent_ids = if $.cookie('sent_ids') then JSON.parse($.cookie('sent_ids')) else []
 
         # сколько загрузок было

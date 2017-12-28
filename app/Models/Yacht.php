@@ -9,14 +9,15 @@ class Yacht extends Model
     protected $connection = 'ycrm';
 
     const UPLOAD_DIR = 'storage/img/yachts/';
-    const TYPES = ['катер', 'моторная яхта', 'парусная яхта'];
+    const TYPES = ['катер', 'моторная яхта', 'парусная яхта', 'яхта с флайбриджем'];
+    const GAS_TYPES = ['дизель', 'бензин'];
     const BODIES = ['алюминий', 'стеклопластик'];
 
     protected $commaSeparated = [
         'photos',
     ];
 
-    protected $appends = ['images'];
+    protected $appends = ['images', 'type_string', 'gas_type_string', 'body_string'];
 
     public function getImagesAttribute()
     {
@@ -28,6 +29,21 @@ class Yacht extends Model
             ];
         }
         return $images;
+    }
+
+    public function getBodyStringAttribute()
+    {
+        return self::BODIES[$this->body];
+    }
+
+    public function getTypeStringAttribute()
+    {
+        return self::TYPES[$this->type];
+    }
+
+    public function getGasTypeStringAttribute()
+    {
+        return self::GAS_TYPES[$this->gas_type];
     }
 
     /**
