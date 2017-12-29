@@ -58,7 +58,7 @@ class Yacht extends Model
         if (isset($manufacturer) && $manufacturer) {
             $query->where('manufacturer', $manufacturer);
         }
-        //
+
         // $query->selectDefault()->orderBy('clients_count', 'desc');
 
         return $query;
