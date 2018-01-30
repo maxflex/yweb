@@ -10,6 +10,9 @@ angular
         # сколько загрузок было
         search_count = 0
 
+        $scope.watchEnter = (event) ->
+            $scope.filter() if event.keyCode is 13
+
         # страница поиска
         $timeout ->
             $scope.search = {}

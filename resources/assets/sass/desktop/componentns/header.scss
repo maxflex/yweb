@@ -4,28 +4,32 @@
     position: relative;
     width: $screen-width;
     margin: 0 auto;
-    padding: 24px 0 15px 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     & button {
         position: absolute;
         left: calc(50% - 95px);
         top: 42px;
     }
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
-    }
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   clear: both;
+    // }
   }
 
   &-logo {
     display: block;
     background: url('../img/logo/tmp.png') no-repeat;
-    width: 131px;
+    width: 83px;
     height: 80px;
     overflow: hidden;
     text-indent: -3000px;
     float: left;
-    background-size: 60%;
+    background-size: 100%;
+    margin-right: 25px;
   }
 
   &-title {
@@ -43,7 +47,7 @@
   &-contacts {
     float: right;
     font-family: $font-regular;
-    padding: 5px 0 0 0;
+    // padding: 5px 0 0 0;
     text-align: right;
     // padding: 0;
 
@@ -190,4 +194,12 @@
 
 .header-contact {
     float: right;
+}
+
+.header-logo-text {
+    color: #2b5e6f;
+    text-transform: uppercase;
+    // font-size: 18px;
+    font-family: $font-medium;
+    text-align: center;
 }

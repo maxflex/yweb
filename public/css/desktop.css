@@ -4380,8 +4380,9 @@ a[href^="https://www.google.com/maps"] {
   color: #a30000;
   font-family: "helveticaneuecyrbold"; }
 
-.fake-select {
+.fake-select, .top-filter input {
   border: 1px solid #acacac;
+  box-sizing: border-box;
   background: white;
   display: -webkit-box;
   display: flex;
@@ -4391,13 +4392,13 @@ a[href^="https://www.google.com/maps"] {
   padding: 0 7px 0 12px;
   border-radius: 4px;
   cursor: pointer; }
-  .fake-select span {
+  .fake-select span, .top-filter input span {
     -webkit-box-flex: 1;
     flex: 1;
     color: #5d5d5d; }
-    .fake-select span b, .fake-select span .address-more li > div:first-of-type, .address-more .fake-select span li > div:first-of-type {
+    .fake-select span b, .top-filter input span b, .fake-select span .address-more li > div:first-of-type, .address-more .fake-select span li > div:first-of-type, .top-filter input span .address-more li > div:first-of-type, .address-more .top-filter input span li > div:first-of-type {
       font-family: "helveticaneuecyrmedium"; }
-  .fake-select img {
+  .fake-select img, .top-filter input img {
     height: 15px;
     width: 15px;
     margin-top: 6px;
@@ -4495,24 +4496,27 @@ a[href^="https://www.google.com/maps"] {
     position: relative;
     width: 960px;
     margin: 0 auto;
-    padding: 24px 0 15px 0; }
+    padding: 20px 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between; }
     .header-inner button {
       position: absolute;
       left: calc(50% - 95px);
       top: 42px; }
-    .header-inner:after {
-      content: '';
-      display: block;
-      clear: both; }
   .header-logo {
     display: block;
     background: url("../img/logo/tmp.png") no-repeat;
-    width: 131px;
+    width: 83px;
     height: 80px;
     overflow: hidden;
     text-indent: -3000px;
     float: left;
-    background-size: 60%; }
+    background-size: 100%;
+    margin-right: 25px; }
   .header-title {
     border-left: 1px solid #e5e5e5;
     font-size: 12px;
@@ -4524,7 +4528,6 @@ a[href^="https://www.google.com/maps"] {
   .header-contacts {
     float: right;
     font-family: "helveticaneuecyrregular";
-    padding: 5px 0 0 0;
     text-align: right; }
     .header-contacts-phone {
       font-size: 24px; }
@@ -4624,6 +4627,12 @@ a[href^="https://www.google.com/maps"] {
 
 .header-contact {
   float: right; }
+
+.header-logo-text {
+  color: #2b5e6f;
+  text-transform: uppercase;
+  font-family: "helveticaneuecyrmedium";
+  text-align: center; }
 
 .footer {
   background: #3b3b3b;
@@ -5087,7 +5096,11 @@ a[href^="https://www.google.com/maps"] {
     height: 100%; }
 
 .top-filter {
-  padding: 0 0 20px 0; }
+  padding: 0 0 20px 0;
+  display: -webkit-box;
+  display: flex; }
+  .top-filter > div {
+    margin-right: 20px; }
   .top-filter-tutors {
     display: inline-block;
     width: 250px;
@@ -5095,6 +5108,9 @@ a[href^="https://www.google.com/maps"] {
   .top-filter-right {
     float: right;
     padding: 9px 0 0 0; }
+  .top-filter input {
+    cursor: auto;
+    width: 100%; }
 
 .photogallery ul {
   margin: 0;

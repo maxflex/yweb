@@ -733,6 +733,7 @@ p.last {
 
 .fake-select {
     border: 1px solid #acacac;
+    box-sizing: border-box;
     // background-color: #f3f3f3;
     background: white;
     display: flex;

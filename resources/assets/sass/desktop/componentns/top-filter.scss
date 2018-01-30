@@ -1,6 +1,9 @@
 .top-filter {
   padding: 0 0 20px 0;
-
+    display: flex;
+    & > div {
+        margin-right: 20px;
+    }
   &-tutors {
     display: inline-block;
     width: 250px;
@@ -10,5 +13,11 @@
   &-right {
     float: right;
     padding: 9px 0 0 0 ;
+  }
+
+  & input {
+    @extend .fake-select;
+    cursor: auto;
+    width: 100%;
   }
 }
