@@ -1329,7 +1329,8 @@ body {
   height: 100%;
   min-height: 100%;
   min-width: 1000px;
-  background: url("../img/bg.jpg") no-repeat 50% 0; }
+  background: url("../img/bg.jpg") no-repeat 50% 0;
+  background-size: cover; }
 
 .global {
   width: 1000px;
