@@ -6,7 +6,7 @@
     use App\Models\Review;
     use App\Models\Page;
     use App\Models\Tutor;
-    use App\Models\Yacht;
+    use App\Models\Api\Yacht;
     use DB;
     use Cache;
 
@@ -116,6 +116,10 @@
                         break;
                     case 'tutor':
                         $replacement = Tutor::find($args[0])->toJson();
+                        break;
+                    case 'random':
+                        $random_yachts = Yacht::select('id', 'name', 'mainPictureUrl')->inRandomOrder()->take(4)->get();
+                        $replacement = $random_yachts->toJson();
                         break;
                     // is|test
                     case 'is':
@@ -255,14 +259,12 @@
         }
 
         /**
-         * Компилировать страницу препода
+         * Компилировать страницу профиля
          */
-        public static function compileTutor($id, &$html)
+        public static function compileYacht($id, &$html)
         {
-            $tutor = Tutor::selectDefault()->whereId($id)->first();
-            static::replace($html, 'subject', $tutor->subjects_string);
-            static::replace($html, 'tutor-name', implode(' ', [$tutor->last_name, $tutor->first_name, $tutor->middle_name]));
-            static::replace($html, 'current_tutor', $tutor->toJson());
+            $yacht = Yacht::with(['location'])->whereId($id)->first()->append('images');
+            static::replace($html, 'current_yacht', $yacht->toJson());
         }
 
         public static function interpolate($text = '', $start = null, $end = null)

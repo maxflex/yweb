@@ -30,6 +30,7 @@ $(document).ready(function() {
     });
 
     angular.element(document).ready(function() {
+        bindControls()
 		setTimeout(function() {
 			scope = angular.element('[ng-app=App]').scope()
 		}, 50)
@@ -47,6 +48,46 @@ $(document).ready(function() {
         scope.StreamService.run('page', null, {href: window.location.href})
     }, 500)
 })
+
+function bindControls() {
+    //Hover head menu
+    $('.header_menu').hover(function () {
+    	$(this).children('menu').stop().slideToggle();
+    });
+
+    //Pop up
+    	$('.link-send-messages').click(function() {
+    		$(".pop-up_send-messges").fadeIn(300);
+    		$('body').append('<div id="mask-pop-up"></div>');
+    		$('#mask-pop-up').fadeIn(300);
+    		return false;
+    	});
+
+    //Pop up
+    	$('.link-feedback').click(function() {
+    		$(".pop-up_feedback").fadeIn(300);
+    		$('body').append('<div id="mask-pop-up"></div>');
+    		$('#mask-pop-up').fadeIn(300);
+    		return false;
+    	});
+
+
+
+    	$('body').on('click', '#mask-pop-up, .btn-x, .btn-gray, .pop-up_link-cancel',
+    		function() {
+    			$('#mask-pop-up, .pop-up_messages').fadeOut(300 , function() {
+    			$('#mask-pop-up').remove();
+    		});
+    		return false;
+    	});
+
+    //Toggle filter
+
+    $('.btn_toggle-filter').click(function(){
+    	$(this).parents('.filter').toggleClass('active');
+    	$(this).parents('.filter').children('.filter_form').slideToggle()
+    })
+}
 
 function closeModal() {
     $('.modal.active').removeClass('modal-animate-open').addClass('modal-animate-close')

@@ -7,7 +7,7 @@ use Illuminate\Pagination\Paginator;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Yacht;
+use App\Models\Api\Yacht;
 use App\Models\Page;
 use DB;
 

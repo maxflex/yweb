@@ -1,7 +1,7 @@
 <?php
     use App\Models\Variable;
     use App\Models\Programm;
-    use App\Models\Tutor;
+    use App\Models\Api\Yacht;
 
     URL::forceSchema('https');
 
@@ -27,7 +27,7 @@
     });
 
     # Tutor profile page
-    Route::get(Tutor::URL . '/{id}', 'PagesController@tutor')->where('id', '[0-9]+');
+    Route::get(Yacht::URL . '/{id}', 'PagesController@yacht')->where('id', '[0-9]+');
 
     Route::get('about', 'PagesController@about');
 
