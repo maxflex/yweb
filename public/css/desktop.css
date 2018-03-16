@@ -1329,7 +1329,8 @@ body {
   height: 100%;
   min-height: 100%;
   min-width: 1000px;
-  background: url("../img/bg.jpg") no-repeat 50% 0; }
+  background: url("../img/bg.jpg") no-repeat 50% 0;
+  background-size: 100%; }
 
 .global {
   width: 1000px;
@@ -1357,7 +1358,8 @@ body {
   height: 61px;
   overflow: hidden;
   text-indent: -300em;
-  background: url("../img/logo.png") no-repeat;
+  background: url("../img/logo/logo.png") no-repeat;
+  background-size: 100%;
   border: 0; }
 
 .header-index {
@@ -1367,7 +1369,8 @@ body {
 .header-index .logo {
   width: 183px;
   height: 102px;
-  background: url("../img/logo_large.png") no-repeat; }
+  background-size: 100%;
+  background: url("../img/logo/logo.png") no-repeat; }
 
 .header-year {
   position: absolute;
@@ -1626,7 +1629,16 @@ body {
 --------------------------------------------------*/
 .contacts_map {
   position: relative;
+  display: -webkit-box;
+  display: flex;
   margin: 0 -30px -20px -30px; }
+  .contacts_map .request-form-wrapper {
+    -webkit-box-flex: 1;
+    flex: 1;
+    padding: 0 20px; }
+    .contacts_map .request-form-wrapper h2 {
+      width: 100%;
+      text-align: center; }
 
 /* Blog list
 --------------------------------------------------*/
@@ -2436,5 +2448,18 @@ body {
   padding: 5px 8px; }
   .price-list tr td:first-child {
     padding-left: 0; }
+
+#map {
+  width: 500px;
+  height: 500px; }
+
+.request-form input, .request-form textarea {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+  margin-bottom: 10px; }
+
+button[disabled], html input[disabled] {
+  opacity: .5; }
 
 /*# sourceMappingURL=desktop.css.map */

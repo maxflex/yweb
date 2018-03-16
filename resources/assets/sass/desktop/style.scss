@@ -144,7 +144,7 @@ body {
 	min-height:100%;
 	min-width:1000px;
 	background: url("../img/bg.jpg") no-repeat 50% 0;
-    // background-size: cover;
+    background-size: 100%;
 }
 
 	.global {
@@ -177,14 +177,14 @@ body {
 
 	.header .logo {
 		display:block;
-
 		width:109px;
 		height:61px;
 
 		overflow:hidden;
 		text-indent:-300em;
 
-		background: url("../img/logo.png") no-repeat;
+		background: url("../img/logo/logo.png") no-repeat;
+        background-size: 100%;
 		border:0;}
 
 
@@ -196,8 +196,8 @@ body {
 	.header-index .logo {
 		width:183px;
 		height:102px;
-
-		background: url("../img/logo_large.png") no-repeat;}
+        background-size: 100%;
+		background: url("../img/logo/logo.png") no-repeat;}
 
 
 
@@ -526,8 +526,17 @@ body {
 --------------------------------------------------*/
 .contacts_map {
 	position:relative;
-
-	margin:0 -30px -20px -30px}
+    display: flex;
+	margin:0 -30px -20px -30px;
+    & .request-form-wrapper {
+        flex: 1;
+        padding: 0 20px;
+        & h2 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
 
 
 
@@ -1576,4 +1585,22 @@ body {
             }
         }
     }
+}
+
+#map {
+    width: 500px;
+    height: 500px;
+}
+
+.request-form {
+    & input, textarea {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+}
+
+button[disabled], html input[disabled] {
+    opacity: .5;
 }

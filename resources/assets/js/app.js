@@ -384,48 +384,8 @@
 }).call(this);
 
 (function() {
-  angular.module('App').controller('Empty', function($scope, $timeout, $filter, $http, StreamService) {
-    var searchReviews;
-    bindArguments($scope, arguments);
-    $scope.expand_items = {};
-    $scope.expandStream = function(action, type) {
-      type = $filter('cut')(type, false, 20, '...');
-      $scope.expand_items[type] = !$scope.expand_items[type];
-      if ($scope.expand_items[type]) {
-        return StreamService.run(action, type);
-      }
-    };
-    $timeout(function() {
-      return $scope.gallery = {};
-    });
-    $scope.initReviews = function(count, min_score, grade, subject, university) {
-      $scope.search = {
-        page: 1,
-        count: count,
-        min_score: min_score,
-        grade: grade,
-        subject: subject,
-        university: university,
-        ids: []
-      };
-      $scope.reviews = [];
-      $scope.has_more_pages = true;
-      return searchReviews();
-    };
-    $scope.nextReviewsPage = function() {
-      StreamService.run('all_reviews', 'more');
-      $scope.search.page++;
-      return searchReviews();
-    };
-    return searchReviews = function() {
-      $scope.searching_reviews = true;
-      return $http.get('/api/reviews/block?' + $.param($scope.search)).then(function(response) {
-        $scope.searching_reviews = false;
-        $scope.reviews = $scope.reviews.concat(response.data.reviews);
-        $scope.search.ids = _.pluck($scope.reviews, 'id');
-        return $scope.has_more_pages = response.data.has_more_pages;
-      });
-    };
+  angular.module('App').controller('Empty', function($scope, $timeout, OrderService) {
+    return bindArguments($scope, arguments);
   });
 
 }).call(this);
@@ -991,7 +951,7 @@
 }).call(this);
 
 (function() {
-  angular.module('App').controller('Yachts', function($scope, $timeout, $http, Yacht, Order) {
+  angular.module('App').controller('Yachts', function($scope, $timeout, $http, Yacht, Order, OrderService) {
     var filter, filter_used, search, search_count;
     bindArguments($scope, arguments);
     $scope.popups = {};
@@ -1391,6 +1351,31 @@
 
 (function() {
 
+
+}).call(this);
+
+(function() {
+  angular.module('App').service('OrderService', function($http, Order) {
+    this.order = {
+      name: '',
+      comment: '',
+      phone: '',
+      yacht_id: null
+    };
+    this.sending = false;
+    this.sent = false;
+    this.send = function() {
+      this.sending = true;
+      return Order.save(this.order, (function(_this) {
+        return function() {
+          closeModal();
+          _this.sending = false;
+          return _this.sent = true;
+        };
+      })(this));
+    };
+    return this;
+  });
 
 }).call(this);
 

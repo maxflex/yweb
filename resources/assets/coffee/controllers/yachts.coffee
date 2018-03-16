@@ -1,6 +1,6 @@
 angular
     .module 'App'
-    .controller 'Yachts', ($scope, $timeout, $http, Yacht, Order) ->
+    .controller 'Yachts', ($scope, $timeout, $http, Yacht, Order, OrderService) ->
         bindArguments($scope, arguments)
 
         $scope.popups = {}
