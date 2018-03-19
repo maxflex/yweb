@@ -75,6 +75,14 @@ class Yacht extends Model
             $query->where('price', '<=', $price_to);
         }
 
+        if (isset($length_from) && $length_from) {
+            $query->where('length', '>=', $length_from);
+        }
+
+        if (isset($length_to) && $length_to) {
+            $query->where('length', '<=', $length_to);
+        }
+
         // $query->selectDefault()->orderBy('clients_count', 'desc');
 
         return $query;

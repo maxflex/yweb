@@ -2462,4 +2462,7 @@ body {
 button[disabled], html input[disabled] {
   opacity: .5; }
 
+.pointer {
+  cursor: pointer; }
+
 /*# sourceMappingURL=desktop.css.map */
