@@ -3,6 +3,13 @@
     <b>Заявка на яхту #{{ $order->yacht_id }}</b>
 </p>
 @endif
+
+@if ($order->branch)
+<p>
+    Представительство: {{ $order->branch }}
+</p>
+@endif
+
 <p>
     Имя: {{ $order->name }}
 </p>

@@ -1676,15 +1676,15 @@ body {
 .contacts_map {
   position: relative;
   display: -webkit-box;
-  display: flex;
-  margin: 0 -30px -20px -30px; }
+  display: flex; }
   .contacts_map .request-form-wrapper {
-    -webkit-box-flex: 1;
-    flex: 1;
     padding: 0 20px; }
     .contacts_map .request-form-wrapper h2 {
       width: 100%;
       text-align: center; }
+  .contacts_map .contacts-list {
+    width: 50%;
+    line-height: 20px; }
 
 /* Blog list
 --------------------------------------------------*/
@@ -2505,16 +2505,23 @@ body {
   width: 500px;
   height: 500px; }
 
-.request-form input, .request-form textarea {
+.request-form input, .request-form textarea, .request-form select {
   width: 100%;
   padding: 3px;
   box-sizing: border-box;
   margin-bottom: 10px; }
+
+.request-form select {
+  height: 26px; }
 
 button[disabled], html input[disabled] {
   opacity: .5; }
 
 .pointer {
   cursor: pointer; }
+
+select {
+  background: white;
+  border-radius: 0; }
 
 /*# sourceMappingURL=desktop.css.map */

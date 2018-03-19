@@ -527,14 +527,18 @@ body {
 .contacts_map {
 	position:relative;
     display: flex;
-	margin:0 -30px -20px -30px;
+	// margin:0 -30px -20px -30px;
     & .request-form-wrapper {
-        flex: 1;
+        // flex: 1;
         padding: 0 20px;
         & h2 {
             width: 100%;
             text-align: center;
         }
+    }
+    & .contacts-list {
+        width: 50%;
+        line-height: 20px;
     }
 }
 
@@ -1603,11 +1607,14 @@ body {
 }
 
 .request-form {
-    & input, textarea {
+    & input, textarea, select {
         width: 100%;
         padding: 3px;
         box-sizing: border-box;
         margin-bottom: 10px;
+    }
+    & select {
+        height: 26px;
     }
 }
 
@@ -1617,4 +1624,11 @@ button[disabled], html input[disabled] {
 
 .pointer {
     cursor: pointer;
+}
+
+select {
+    // -webkit-appearance: none;
+    background: white;
+    // border: 1px solid #dfdfdf;
+    border-radius: 0;
 }
