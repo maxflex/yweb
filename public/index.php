@@ -54,6 +54,10 @@ if (! isset($_SESSION['sent_ids'])) {
     $_SESSION['sent_ids'] = [];
 }
 
+if (! isset($_SESSION['branch'])) {
+    $_SESSION['branch'] = 'msk';
+}
+
 if (! isset($_COOKIE['source']))
 {
     $_COOKIE['source'] = array(

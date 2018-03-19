@@ -7,6 +7,11 @@
 
     Route::get('sitemap.xml', 'SitemapController@index');
 
+    Route::get('/branch/{branch}', function($branch) {
+        $_SESSION['branch'] = $branch;
+        return redirect()->back();
+    });
+
     Route::get('/full', function() {
         unset($_SESSION['force_mobile']);
         $_SESSION['force_full'] = true;

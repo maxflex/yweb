@@ -144,6 +144,21 @@
                     case 'filesize':
                         $replacement = getSize($args[0], 0);
                         break;
+                    case 'phone':
+                        switch($_SESSION['branch']) {
+                            case 'msk':
+                                $replacement = '<sup>+7 (499)</sup> 111-11-11';
+                                break;
+                            case 'spb':
+                                $replacement = '<sup>+7 (444)</sup> 222-22-22';
+                                break;
+                            default:
+                                $replacement = '<sup>+30 (211)</sup> 176-85-54';
+                        }
+                        break;
+                    case 'branch':
+                        $replacement = $_SESSION['branch'] == $args[0] ? 'active' : '';
+                        break;
                     case 'reviews':
                         if ($args[0] === 'random') {
                             $replacement = Review::get(1, true)->toJson();
