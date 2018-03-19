@@ -2524,4 +2524,7 @@ select {
   background: white;
   border-radius: 0; }
 
+.search-result_list_options {
+  padding-bottom: 16px !important; }
+
 /*# sourceMappingURL=desktop.css.map */
