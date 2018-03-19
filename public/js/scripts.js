@@ -16987,10 +16987,16 @@ $(document).ready(function() {
 
 function bindControls() {
     //Hover head menu
-    $('.header_menu').hover(function () {
-    	$(this).children('menu').stop().slideToggle();
-    });
-
+    // $('.header_menu').hover(function () {
+    // 	$(this).children('menu').stop().slideToggle();
+    // });
+    current = window.location.pathname.split('/')[1]
+    console.log(current)
+    $('.main-menu a').each(function(index, el) {
+        if ($(el).attr('href') == '/' + current) {
+            $(el).addClass('active')
+        }
+    })
     //Pop up
     	$('.link-send-messages').click(function() {
     		$(".pop-up_send-messges").fadeIn(300);

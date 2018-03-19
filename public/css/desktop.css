@@ -1209,6 +1209,45 @@ table {
       padding: 0.65rem 0.6rem;
       margin: 0.2rem 0.4rem; }
 
+.main-menu {
+  display: -webkit-box;
+  display: flex; }
+  .main-menu div {
+    display: contents; }
+    .main-menu div a {
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      outline: none;
+      font-size: 16px; }
+      .main-menu div a.active {
+        background: white !important;
+        color: #2f2f2f !important; }
+      .main-menu div a:hover {
+        background: rgba(255, 255, 255, 0.25); }
+
+.destination {
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 50px; }
+  .destination > div {
+    width: 50%; }
+  .destination .destination-image {
+    padding-right: 30px; }
+    .destination .destination-image img {
+      width: 100%; }
+  .destination .destination-desc .more-info {
+    display: block;
+    margin-top: 15px; }
+
+.btn-primary {
+  font-family: 'franklingothicbookcmpcbook';
+  color: #c4ab6d;
+  outline: none;
+  background: #fafafa;
+  border: 1px solid #cfcecb;
+  padding: 3px 5px; }
+
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.

@@ -1,0 +1,20 @@
+.main-menu {
+    display: flex;
+    & div {
+        display: contents;
+        & a {
+            padding: 10px 20px;
+            background: rgba(white, .15);
+            color: white;
+            outline: none;
+            font-size: 16px;
+            &.active {
+                background: white !important;
+                color: rgb(47, 47, 47) !important;
+            }
+            &:hover {
+                background: rgba(white, .25);
+            }
+        }
+    }
+}

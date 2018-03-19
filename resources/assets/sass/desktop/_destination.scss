@@ -1,0 +1,19 @@
+.destination {
+    display: flex;
+    margin-bottom: 50px;
+    & > div {
+        width: 50%;
+    }
+    & .destination-image {
+        padding-right: 30px;
+        & img {
+            width: 100%;
+        }
+    }
+    & .destination-desc {
+        & .more-info {
+            display: block;
+            margin-top: 15px;
+        }
+    }
+}
