@@ -56,7 +56,7 @@ class Yacht extends Model
 
     public function getDescriptionAttribute($value)
     {
-        return preg_replace("/ *[\r\n]+/", "<br /><br />", $value);
+        return preg_replace("/ *[\r\n]+/", "<br />", $value);
     }
 
     public function getPricesAttribute($value)
