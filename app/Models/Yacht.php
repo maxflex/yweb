@@ -8,6 +8,7 @@ class Yacht extends Model
 {
     protected $connection = 'ycrm';
 
+    const URL = 'yacht';
     const UPLOAD_DIR = 'storage/img/yachts/';
     const TYPES = ['катер', 'моторная яхта', 'парусная яхта', 'яхта с флайбриджем'];
     const GAS_TYPES = ['дизель', 'бензин'];
@@ -17,33 +18,40 @@ class Yacht extends Model
         'photos',
     ];
 
-    protected $appends = ['images', 'type_string', 'gas_type_string', 'body_string'];
+    protected $appends = ['images', 'type_string', 'gas_type_string', 'body_string', 'mainPictureUrl'];
+
+    public function getMainPictureUrlAttribute()
+    {
+        return config('app.crm-url') . self::UPLOAD_DIR . $this->photos[0];
+    }
 
     public function getImagesAttribute()
     {
         $images = [];
-        foreach ($this->photos as $index => $photo) {
-            $images[] = [
-                'id'  => $index + 1,
-                'url' => config('app.crm-url') . self::UPLOAD_DIR . $photo
-            ];
+        if ($this->photos) {
+            foreach ($this->photos as $index => $photo) {
+                $images[] = [
+                    'id'  => $index + 1,
+                    'url' => config('app.crm-url') . self::UPLOAD_DIR . $photo
+                ];
+            }
         }
         return $images;
     }
 
     public function getBodyStringAttribute()
     {
-        return self::BODIES[$this->body];
+        // return self::BODIES[$this->body];
     }
 
     public function getTypeStringAttribute()
     {
-        return self::TYPES[$this->type];
+        // return self::TYPES[$this->type];
     }
 
     public function getGasTypeStringAttribute()
     {
-        return self::GAS_TYPES[$this->gas_type];
+        // return self::GAS_TYPES[$this->gas_type];
     }
 
     /**

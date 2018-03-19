@@ -6,7 +6,7 @@
     use App\Models\Review;
     use App\Models\Page;
     use App\Models\Tutor;
-    use App\Models\Api\Yacht;
+    use App\Models\Yacht;
     use DB;
     use Cache;
 
@@ -118,7 +118,7 @@
                         $replacement = Tutor::find($args[0])->toJson();
                         break;
                     case 'random':
-                        $random_yachts = Yacht::select('id', 'name', 'mainPictureUrl')->inRandomOrder()->take(4)->get();
+                        $random_yachts = Yacht::select('id', 'name', 'price', 'photos')->inRandomOrder()->take(4)->get();
                         $replacement = $random_yachts->toJson();
                         break;
                     // is|test
@@ -263,7 +263,7 @@
          */
         public static function compileYacht($id, &$html)
         {
-            $yacht = Yacht::with(['location'])->whereId($id)->first()->append('images');
+            $yacht = Yacht::whereId($id)->first();
             static::replace($html, 'current_yacht', $yacht->toJson());
         }
 

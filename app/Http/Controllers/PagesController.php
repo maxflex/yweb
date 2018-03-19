@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models\Page;
 use App\Models\Variable;
-use App\Models\Api\Yacht;
+use App\Models\Yacht;
 use App\Models\Service\Parser;
 
 class PagesController extends Controller
