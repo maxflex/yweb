@@ -1,7 +1,7 @@
 .main-menu {
     display: flex;
     & div {
-        display: contents;
+        display: flex;
         & a {
             padding: 10px 20px;
             background: rgba(white, .15);

@@ -1213,7 +1213,8 @@ table {
   display: -webkit-box;
   display: flex; }
   .main-menu div {
-    display: contents; }
+    display: -webkit-box;
+    display: flex; }
     .main-menu div a {
       padding: 10px 20px;
       background: rgba(255, 255, 255, 0.15);
