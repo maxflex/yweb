@@ -1220,7 +1220,7 @@ table {
       background: rgba(255, 255, 255, 0.15);
       color: white;
       outline: none;
-      font-size: 16px; }
+      font-size: 17px; }
       .main-menu div a.active {
         background: white !important;
         color: #2f2f2f !important; }
@@ -1233,13 +1233,19 @@ table {
   margin-bottom: 50px; }
   .destination > div {
     width: 50%; }
-  .destination .destination-image {
-    padding-right: 30px; }
-    .destination .destination-image img {
-      width: 100%; }
+  .destination .destination-image img {
+    width: 100%; }
   .destination .destination-desc .more-info {
     display: block;
     margin-top: 15px; }
+  .destination.right {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse; }
+    .destination.right .destination-image {
+      padding-left: 30px; }
+  .destination.left .destination-image {
+    padding-right: 30px; }
 
 .btn-primary {
   font-family: 'franklingothicbookcmpcbook';
