@@ -778,7 +778,7 @@ body {
 		padding:0 0 25px 0}
 		.search-result_sort_list {
 			margin:0;
-			padding:0 0 0 18px;
+			padding:0;
 
 			list-style:none;
 
@@ -786,17 +786,27 @@ body {
 			display: inline-block;
 			vertical-align: top;
 			zoom: 1;
-			*display: inline;}
-			.search-result_sort_list li  {
-
-				padding:0 13px 0 0;
-				margin:0 12px 0 0 ;
-
+			*display: inline;
+            & li {
+                // padding:0 13px 0 0;
+				padding: 0px 8px;
+                margin: 0 3px;
 				display: -moz-inline-stack;
 				display: inline-block;
 				vertical-align: top;
 				zoom: 1;
-				*display: inline;}
+				*display: inline;
+                color: white;
+                background: rgba(#c4ab6d, .5);
+                cursor: pointer;
+                &:hover {
+                    background: rgba(#c4ab6d, .75);
+                }
+                &.active {
+                    background: rgba(#c4ab6d, 1) !important;
+                }
+            }
+        }
 
 				.search-result_sort_list li.active-top {
 					background: url("../img/ic_arrow_top.png") no-repeat 100% 9px}

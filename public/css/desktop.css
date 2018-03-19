@@ -1860,22 +1860,28 @@ body {
 
 .search-result_sort_list {
   margin: 0;
-  padding: 0 0 0 18px;
+  padding: 0;
   list-style: none;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: top;
   zoom: 1;
   *display: inline; }
-
-.search-result_sort_list li {
-  padding: 0 13px 0 0;
-  margin: 0 12px 0 0;
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: top;
-  zoom: 1;
-  *display: inline; }
+  .search-result_sort_list li {
+    padding: 0px 8px;
+    margin: 0 3px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+    color: white;
+    background: rgba(196, 171, 109, 0.5);
+    cursor: pointer; }
+    .search-result_sort_list li:hover {
+      background: rgba(196, 171, 109, 0.75); }
+    .search-result_sort_list li.active {
+      background: #c4ab6d !important; }
 
 .search-result_sort_list li.active-top {
   background: url("../img/ic_arrow_top.png") no-repeat 100% 9px; }

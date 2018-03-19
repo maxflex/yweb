@@ -19,9 +19,15 @@ angular
             if not $scope.profilePage()
                 $scope.filter()
 
-        $scope.setLength = (from, to = null) ->
-            $scope.search.length_from = from
-            $scope.search.length_to = to
+        $scope.setLength = (menu, from, to = null) ->
+            if $scope.menu_length == menu
+                $scope.menu_length = null
+                $scope.search.length_from = null
+                $scope.search.length_to = null
+            else
+                $scope.menu_length = menu
+                $scope.search.length_from = from
+                $scope.search.length_to = to
             $scope.filter()
 
         $scope.filterPopup = (popup) ->
