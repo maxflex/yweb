@@ -1,0 +1,29 @@
+.vacation {
+    display: flex;
+    margin-bottom: 50px;
+    & > div {
+        width: 50%;
+    }
+    & .vacation-image {
+        & img {
+            width: 100%;
+        }
+    }
+    & .vacation-desc {
+        & .more-info {
+            display: block;
+            margin-top: 15px;
+        }
+    }
+    &.right {
+        flex-direction: row-reverse;
+        & .vacation-image {
+            padding-left: 30px;
+        }
+    }
+    &.left {
+        & .vacation-image {
+            padding-right: 30px;
+        }
+    }
+}

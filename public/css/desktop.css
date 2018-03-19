@@ -1247,6 +1247,26 @@ table {
   .destination.left .destination-image {
     padding-right: 30px; }
 
+.vacation {
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 50px; }
+  .vacation > div {
+    width: 50%; }
+  .vacation .vacation-image img {
+    width: 100%; }
+  .vacation .vacation-desc .more-info {
+    display: block;
+    margin-top: 15px; }
+  .vacation.right {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse; }
+    .vacation.right .vacation-image {
+      padding-left: 30px; }
+  .vacation.left .vacation-image {
+    padding-right: 30px; }
+
 .btn-primary {
   font-family: 'franklingothicbookcmpcbook';
   color: #c4ab6d;
@@ -2526,5 +2546,13 @@ select {
 
 .search-result_list_options {
   padding-bottom: 16px !important; }
+
+.search-result_list_text {
+  font-size: 20px; }
+  .search-result_list_text b {
+    font-size: 24px; }
+  .search-result_list_text li, .search-result_list_text a {
+    font-size: 16px;
+    line-height: 20px; }
 
 /*# sourceMappingURL=desktop.css.map */
