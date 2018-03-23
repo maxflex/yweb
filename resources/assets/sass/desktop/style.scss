@@ -1665,3 +1665,9 @@ select {
     font-size: 22px;
   }
 }
+
+.header-year.small {
+  transform: scale(.63);
+  top: 2px;
+  left: 100px;
+}

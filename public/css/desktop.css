@@ -2568,4 +2568,10 @@ select {
   .yacht-price .price-digit {
     font-size: 22px; }
 
+.header-year.small {
+  -webkit-transform: scale(0.63);
+  transform: scale(0.63);
+  top: 2px;
+  left: 100px; }
+
 /*# sourceMappingURL=desktop.css.map */
