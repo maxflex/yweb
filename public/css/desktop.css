@@ -1545,6 +1545,12 @@ body {
   font-size: 13px;
   line-height: 16px;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+  .location-main .location-info {
+    position: absolute;
+    color: white;
+    top: 25px;
+    right: 240px;
+    text-align: right; }
 
 .location-main a {
   margin: 0 0 0 19px;
@@ -1556,6 +1562,8 @@ body {
   vertical-align: top;
   zoom: 1;
   *display: inline; }
+  .location-main a:first-child {
+    margin-left: 0; }
 
 .location-main a:hover {
   background: none; }
@@ -2554,5 +2562,10 @@ select {
   .search-result_list_text li, .search-result_list_text a {
     font-size: 16px;
     line-height: 20px; }
+
+.yacht-price {
+  margin-bottom: 16px; }
+  .yacht-price .price-digit {
+    font-size: 22px; }
 
 /*# sourceMappingURL=desktop.css.map */

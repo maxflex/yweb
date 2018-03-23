@@ -336,10 +336,20 @@ body {
 .location-main {
 	font-size:13px;
 	line-height:16px;
-	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  & .location-info {
+    position: absolute;
+    color: white;
+    top: 25px;
+    right: 240px;
+    text-align: right;
+  }
+}
 	.location-main a {
 		margin:0 0 0 19px;
-
+    &:first-child {
+      margin-left: 0;
+    }
 		text-decoration:none !important;
 		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 
@@ -1646,4 +1656,12 @@ select {
         font-size: 16px;
         line-height: 20px;
     }
+}
+
+
+.yacht-price {
+  margin-bottom: 16px;
+  & .price-digit {
+    font-size: 22px;
+  }
 }

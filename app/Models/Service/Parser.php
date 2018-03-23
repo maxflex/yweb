@@ -174,6 +174,36 @@
                                 $replacement = '<sup>+7 (495)</sup> 646-87-35';
                         }
                         break;
+                    case 'location-info':
+                        switch($_SESSION['branch']) {
+                            case 'msk':
+                                $replacement = 'Россия, Москва';
+                                break;
+                            case 'soc':
+                                $replacement = 'Россия, Москва';
+                                break;
+                            case 'gre':
+                                $replacement = 'Греция, Афины';
+                                break;
+                            case 'tur':
+                                $replacement = 'Турция, Мармарис';
+                                break;
+                            case 'hor':
+                                $replacement = 'Хорватия, Сплит';
+                                break;
+                            case 'ita':
+                                $replacement = 'Италия, Наполи';
+                                break;
+                            case 'spa':
+                                $replacement = 'Испания, Барселона';
+                                break;
+                            case 'fra':
+                                $replacement = 'Франция, Марсель';
+                                break;
+                            default:
+                                $replacement = 'ул.Мясницкая, 40с1';
+                        }
+                        break;
                     case 'branch':
                         $replacement = $_SESSION['branch'] == $args[0] ? 'active' : '';
                         break;
