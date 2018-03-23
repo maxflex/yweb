@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'info@ege-repetitor.ru',
-        'name' => 'ЕГЭ-Репетитор',
+        'address' => 'info@erdmanyachts.com',
+        'name' => 'Erdman Yachts',
     ],
 
     /*
