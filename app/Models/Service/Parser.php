@@ -147,13 +147,31 @@
                     case 'phone':
                         switch($_SESSION['branch']) {
                             case 'msk':
-                                $replacement = '<sup>+7 (499)</sup> 111-11-11';
+                                $replacement = '<sup>+7 (495)</sup> 646-87-35';
                                 break;
-                            case 'spb':
-                                $replacement = '<sup>+7 (444)</sup> 222-22-22';
+                            case 'soc':
+                                $replacement = '<sup>+7 (862)</sup> 300-01-83';
+                                break;
+                            case 'gre':
+                                $replacement = '<sup>+30 (21)</sup> 1198-8465';
+                                break;
+                            case 'tur':
+                                $replacement = '<sup>+90 (850)</sup> 390-28-49';
+                                break;
+                            case 'hor':
+                                $replacement = '<sup>+385 (21)</sup> 773-729';
+                                break;
+                            case 'ita':
+                                $replacement = '<sup>+39 (081)</sup> 189-21396';
+                                break;
+                            case 'spa':
+                                $replacement = '<sup>+34 (931)</sup> 22-47-41';
+                                break;
+                            case 'fra':
+                                $replacement = '<sup>+33 (413)</sup> 68-01-57';
                                 break;
                             default:
-                                $replacement = '<sup>+30 (211)</sup> 176-85-54';
+                                $replacement = '<sup>+7 (495)</sup> 646-87-35';
                         }
                         break;
                     case 'branch':

@@ -1,10 +1,10 @@
-@if ($order->yacht_id)
+@if (isset($order->yacht_id) && $order->yacht_id)
 <p>
     <b>Заявка на яхту #{{ $order->yacht_id }}</b>
 </p>
 @endif
 
-@if ($order->branch)
+@if (isset($order->branch) && $order->branch)
 <p>
     Представительство: {{ $order->branch }}
 </p>
