@@ -56,7 +56,7 @@ class Yacht extends Model
 
     public function getDescriptionAttribute($value)
     {
-        $value = str_replace("\'", "\\'", $value);
+        $value = str_replace("\'", "\`", $value);
         return nl2br($value);
     }
 
