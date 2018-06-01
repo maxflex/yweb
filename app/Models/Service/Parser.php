@@ -153,7 +153,7 @@
                                 $replacement = '<sup>+7 (862)</sup> 300-01-83';
                                 break;
                             case 'gre':
-                                $replacement = '<sup>+30 (21)</sup> 1198-8465';
+                                $replacement = '<sup>+30 (21)</sup> 1198-4406';
                                 break;
                             case 'tur':
                                 $replacement = '<sup>+90 (850)</sup> 390-28-49';
