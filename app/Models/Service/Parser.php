@@ -147,7 +147,7 @@
                     case 'phone':
                         switch($_SESSION['branch']) {
                             case 'msk':
-                                $replacement = '<sup>+7 (495)</sup> 646-87-35';
+                                $replacement = '<sup>+7 (495)</sup> 662-95-20';
                                 break;
                             case 'soc':
                                 $replacement = '<sup>+7 (862)</sup> 300-01-83';
@@ -171,7 +171,7 @@
                                 $replacement = '<sup>+33 (413)</sup> 68-01-57';
                                 break;
                             default:
-                                $replacement = '<sup>+7 (495)</sup> 646-87-35';
+                                $replacement = '<sup>+7 (495)</sup> 662-95-20';
                         }
                         break;
                     case 'location-info':
